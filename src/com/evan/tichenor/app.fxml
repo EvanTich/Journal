@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CustomMenuItem?>
+<VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.evan.tichenor.Controller">
+    <BorderPane prefHeight="800.0" prefWidth="800.0">
+        <top>
+            <VBox>
+                <MenuBar>
+                    <Menu mnemonicParsing="false" text="File">
+                        <MenuItem mnemonicParsing="true" onAction="#save" text="_Save" />
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Info">
+                        <MenuItem mnemonicParsing="false" onAction="#info" text="Info" />
+                        <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
+                    </Menu>
+                    <!--<Menu mnemonicParsing="false" text="Options">-->
+                        <!--<CustomMenuItem>-->
+                            <!--I'll do something with this later, maybe (who knows?)-->
+                        <!--</CustomMenuItem>-->
+                    <!--</Menu>-->
+                </MenuBar>
+            </VBox>
+        </top>
+        <center>
+            <VBox spacing="8">
+                <padding>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                </padding>
+                <TextField fx:id="title" maxHeight="25.0" prefHeight="25.0" promptText="Title or Subject">
+                    <tooltip><Tooltip text="The title of this journal entry"/></tooltip>
+                </TextField>
+
+                <TextField fx:id="description" maxHeight="50.0" prefHeight="25.0" promptText="Description">
+                    <tooltip><Tooltip text="The shortest description of this journal entry"/></tooltip>
+                </TextField>
+
+                <TextArea fx:id="body" wrapText="true" promptText="Body" maxHeight="Infinity">
+                    <tooltip><Tooltip text="The main text of this entry."/></tooltip>
+                </TextArea>
+            </VBox>
+        </center>
+        <bottom>
+            <ButtonBar>
+                <buttons>
+                    <Text fx:id="saved" text="Saved!" style="-fx-stroke: green;" visible="false"/>
+                    <Text fx:id="failed" text="Failed!" style="-fx-stroke: red;" visible="false"/>
+                    <Button onAction="#save" text="Save"/>
+                    <Button onAction="#clear" text="Clear"/>
+                </buttons>
+            </ButtonBar>
+        </bottom>
+    </BorderPane>
+</VBox>
