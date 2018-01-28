@@ -23,6 +23,7 @@ hs_err_pid*
 
 # Other
 .idea/
+*.iml
 out/
 !out/artifacts/
 src/META-INF/
